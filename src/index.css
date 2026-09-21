@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #FFF9EF;
+    --text-main: #0F2A33;
+    --text-muted: #243C45;
+    --primary: #0E7C86;
+    --primary-hover: #095D65;
+    --primary-light: #E6F4F5;
+    --accent: #F4A300;
+    --accent-hover: #D98F00;
+    --accent-light: #FFF4DC;
+    --danger: #C62828;
+    --danger-hover: #A31F1F;
+    --danger-light: #FDE8E8;
+    --surface: #FFFFFF;
+    --surface-hover: #FCF8EE;
+    --border: #E8DEC8;
+    --font-size-base: 20px;
+    --line-height-base: 1.65;
+  }
+
+  :root[data-theme="dark"] {
+    --bg-main: #0B191E;
+    --text-main: #F1F7F8;
+    --text-muted: #A0B9C2;
+    --primary: #1BB1BF;
+    --primary-hover: #3CD0DF;
+    --primary-light: #12303A;
+    --accent: #FFB834;
+    --accent-hover: #FFC65C;
+    --accent-light: #362912;
+    --danger: #EF5350;
+    --danger-hover: #FF706D;
+    --danger-light: #3B1B1C;
+    --surface: #12242B;
+    --surface-hover: #172F38;
+    --border: #1E3B46;
+  }
+
+  :root[data-text-size="normal"] {
+    --font-size-base: 20px;
+  }
+
+  :root[data-text-size="large"] {
+    --font-size-base: 24px;
+  }
+
+  :root[data-text-size="xlarge"] {
+    --font-size-base: 28px;
+  }
+
+  html {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    font-family: "Noto Sans", "Noto Sans Devanagari", system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+  }
+}
+
+/* Custom elder-friendly focus indicators */
+*:focus-visible {
+  outline: 3px solid var(--primary) !important;
+  outline-offset: 3px !important;
+}
+
+/* Devanagari text line-height adjustment to prevent matra clipping */
+.devanagari-safe,
+html[lang="hi"],
+[lang="hi"] {
+  line-height: 1.75 !important;
+}
+
+/* Ensure Hindi matras (ascenders/descenders) have vertical headroom and are never clipped */
+[lang="hi"] button,
+[lang="hi"] span,
+[lang="hi"] p,
+[lang="hi"] h1,
+[lang="hi"] h2,
+[lang="hi"] h3,
+[lang="hi"] h4,
+[lang="hi"] li {
+  overflow: visible;
+}
+
+/* Skip link styling */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+
+.skip-to-content:focus {
+  top: 1rem;
+}

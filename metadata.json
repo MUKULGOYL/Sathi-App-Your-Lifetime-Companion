@@ -1,0 +1,12 @@
+{
+  "name": "Sathi / साथी",
+  "description": "A GenAI-powered daily companion helping senior citizens navigate everyday tasks with ease, confidence and independence in English and Hindi.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
